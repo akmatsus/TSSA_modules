@@ -76,4 +76,6 @@ def self_contained_UVexporter(filename):
     df_melted = melter(df)
     df_list = xydata_separator(df_melted)
     final_df = xydata_concat(df_list[0],df_list[1],df_list[2])
+    final_df = final_df.drop(columns=['variable'])
+    
     return final_df
